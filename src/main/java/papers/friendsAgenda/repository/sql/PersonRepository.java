@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import papers.friendsAgenda.domain.sql.Person;
 
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     @Query("from Person p order by p.name")
     List<Person> buscarTodos();

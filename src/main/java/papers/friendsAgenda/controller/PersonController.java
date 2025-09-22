@@ -60,7 +60,7 @@ public class PersonController {
 
     // DELETE /persons/{id} -> eliminar persona
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         personService.eliminar(id);
     }
 }
