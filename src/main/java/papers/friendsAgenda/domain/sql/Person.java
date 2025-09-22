@@ -16,6 +16,16 @@ public class Person {
     private Integer age;
     private String email;
 
+    public Person(String userName, String name, Integer age, String email) {
+        this.userName = userName;
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    public Person() {
+    }
+
     public Integer getPersonId() {
         return personId;
     }

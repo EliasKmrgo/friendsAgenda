@@ -9,17 +9,20 @@ import papers.friendsAgenda.domain.sql.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 
-    @Query("from Person p order by p.name")
+    // Retorna todas las personas ordenadas por nombre
+    @Query("SELECT p FROM Person p ORDER BY p.name")
     List<Person> buscarTodos();
 
-    @Query("from Person p where p.personId = ?1")
+    // Busca por el campo personId (si no es la PK)
+    @Query("SELECT p FROM Person p WHERE p.personId = ?1")
     Person buscarPorId(Integer id);
 
-    @Query("from Person p where p.email = ?1")
+    // Busca por email exacto
+    @Query("SELECT p FROM Person p WHERE p.email = ?1")
     Person buscarPorEmail(String email);
 
-    @Query("from Person p where p.name like %?1%")
+    // Busca por nombre (contiene)
+    @Query("SELECT p FROM Person p WHERE p.name LIKE %?1%")
     List<Person> buscarPorNombre(String name);
 
 }
-
