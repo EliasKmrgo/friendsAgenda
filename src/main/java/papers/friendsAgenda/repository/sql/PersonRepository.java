@@ -12,7 +12,7 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
     @Query("from Person p order by p.name")
     List<Person> buscarTodos();
 
-    @Query("from Person p where p.id = ?1")
+    @Query("from Person p where p.personId = ?1")
     Person buscarPorId(Integer id);
 
     @Query("from Person p where p.email = ?1")
@@ -20,4 +20,6 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     @Query("from Person p where p.name like %?1%")
     List<Person> buscarPorNombre(String name);
+
 }
+
